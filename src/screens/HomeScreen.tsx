@@ -5,7 +5,7 @@ export const HomeScreen = () => {
     return (
         <View>
             <Text>
-                HomeScreen
+                Pokedex
             </Text>
         </View>
     )
