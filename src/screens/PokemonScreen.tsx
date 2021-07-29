@@ -7,6 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FadeInImage } from '../components/FadeInImage';
 import { usePokemon } from '../hooks/usePokemon';
 import { ActivityIndicator } from 'react-native';
+import { PokemonDetails } from '../components/PokemonDetails';
 
 interface Props extends StackScreenProps<RootStackParams, 'PokemonScreen'> { }
 
@@ -68,12 +69,18 @@ export const PokemonScreen = ({ navigation, route }: Props) => {
             </View>
 
             {/* details */}
-            <View style={{ ...styles.loadingIndicator }}>
-                <ActivityIndicator
-                    color="blue"
-                    size={50}
-                />
-            </View>
+            {
+                isLoading ? (
+                    <View style={{ ...styles.loadingIndicator }}>
+                        <ActivityIndicator
+                            color="blue"
+                            size={50}
+                        />
+                    </View>) :
+                    <PokemonDetails pokemon={pokemon} />
+
+            }
+
 
 
         </View>
