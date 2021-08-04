@@ -1,9 +1,10 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 import { Navigator } from './Navigator';
-import { SearchScreen } from '../screens/SearchScreen';
 import { Ionicons } from '@expo/vector-icons';
+import { Tab2Component } from './Tab2Component';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +40,7 @@ export const Tabs = () => {
             />
             <Tab.Screen
                 name="SearchScreen"
-                component={SearchScreen}
+                component={Tab2Component}
                 options={{
                     tabBarLabel: "Search",
                     tabBarIcon: ({ color }) =>
